@@ -16,11 +16,11 @@ Endless runner with a target audience of 18 – 25 year olds with a relaxing vib
 
 ## Core mechanics (3 to 5 verbs or systems)
 
-1. Swipe
+1. Swipe.
     
-2. Collect
+2. Collect.
     
-3. Score
+3. Score.
     
 
 ## Dynamics (what emerges when the mechanics meet the player)
