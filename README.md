@@ -2,7 +2,7 @@
 mobile game development module repository
 
 
-##Android Keystore
+## Android Keystore
 Keystore file: zenrun-release.keystore
 Location: C:\Users\dylco\Documents\GameSecrets
 Alias: zenrun
