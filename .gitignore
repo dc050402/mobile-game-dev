@@ -86,6 +86,7 @@ crashlytics-build.properties
 
 #Backup build 
 Builds_BackUpThisFolder_ButDontShipItWithYourGame
+MobileGameDev_BurstDebugInformation_DoNotShip
 
 # TestRunner generated files
 InitTestScene*.unity*
