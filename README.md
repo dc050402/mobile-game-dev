@@ -11,3 +11,16 @@ Validity: 50 years
 The keystore is stored outside of the project directory. Passwords are stored securely in the password manager and are not included with this repository.
 
 A backup of the keystore is stored in a second encrypted location.
+
+## Build Instructions
+Open Project in Unity 
+Open File -> Build Profiles
+Select Android Release build profile
+Confirm that Android platform is selected
+Ensure package name and version is correct
+Ensure the release keystore is selected
+Click Build
+Save APK to Builds/
+Using abd install, aok can be installed on a connecteed Android devid.
+
+Development build use the android dev build profile.
