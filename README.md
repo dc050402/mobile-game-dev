@@ -24,3 +24,6 @@ Save APK to Builds/
 Using abd install, aok can be installed on a connecteed Android devid.
 
 Development build use the android dev build profile.
+
+## Repository Structure
+Main branch is where all stable code will go for publishing/production. Develop branch will be used to merge new features from feature branches to be tested before hitting the stable release. All new features will be worked on in a seperate feature branch with a clear naming distinction of the branch being used.
