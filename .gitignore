@@ -84,6 +84,9 @@ mono_crash.*
 # Crashlytics generated file
 crashlytics-build.properties
 
+#Backup build 
+Builds_BackUpThisFolder_ButDontShipItWithYourGame
+
 # TestRunner generated files
 InitTestScene*.unity*
 
