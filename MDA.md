@@ -83,7 +83,7 @@ Endless runner with a target audience of 18 – 25 year olds with a relaxing vib
 
 ## Scope lock
 
-- **Locked on:** Wed 16 Sep 2026
+- **Locked on:** Wed 4 Oct 2026
     
 - **Changes after lock** require a note in the development journal explaining what changed and why.
     
