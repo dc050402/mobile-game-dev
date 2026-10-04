@@ -1,0 +1,3 @@
+CPU Usage:
+Rendering: 
+Memory: 
