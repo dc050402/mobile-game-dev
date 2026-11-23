@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,12 +16,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // Mobile touch input
-        bool touchJump = Input.touchCount > 0 &&
-                         Input.GetTouch(0).phase == TouchPhase.Began;
+        // Mobile touchscreen input
+        bool touchJump = Touchscreen.current != null &&
+                         Touchscreen.current.primaryTouch.press.wasPressedThisFrame;
 
-        // Keyboard input for Unity Editor testing
-        bool keyboardJump = Input.GetKeyDown(KeyCode.Space);
+        // Keyboard input for testing in Unity Editor
+        bool keyboardJump = Keyboard.current != null &&
+                            Keyboard.current.spaceKey.wasPressedThisFrame;
 
         if ((touchJump || keyboardJump) && isGrounded)
         {
