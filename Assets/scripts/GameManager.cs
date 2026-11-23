@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject gameOverPanel;
     public GameObject pausePanel;
+    public GameObject zenModeButton;
     public TMP_Text scoreText;
     public TMP_Text energyText;
 
@@ -100,6 +101,11 @@ public class GameManager : MonoBehaviour
         {
             energyText.text = "Zen Energy: " +
                 zenEnergy + " / " + maxZenEnergy;
+        }
+
+        if (zenModeButton != null)
+        {
+            zenModeButton.SetActive(zenEnergy >= maxZenEnergy);
         }
     }
 
