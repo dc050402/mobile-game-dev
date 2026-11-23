@@ -10,6 +10,19 @@ public class GameManager : MonoBehaviour
     private float score;
     private bool isGameOver;
 
+    public void AddScore(int amount)
+    {
+        if (isGameOver) return;
+
+        score += amount;
+
+        if (scoreText != null)
+        {
+            scoreText.text = "Score: " + Mathf.FloorToInt(score);
+        }
+    }
+
+
     void Start()
     {
         Time.timeScale = 1f;
