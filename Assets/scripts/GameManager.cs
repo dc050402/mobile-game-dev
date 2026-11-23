@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour
     public int zenEnergy = 0;
     public int maxZenEnergy = 100;
 
+    public float zenModeDuration = 5f;
+    public float slowMotionScale = 0.5f;
+
+    private bool isZenModeActive = false;
+
     public void AddScore(int amount)
     {
         if (isGameOver) return;
@@ -34,6 +39,30 @@ public class GameManager : MonoBehaviour
         );
 
         UpdateEnergy();
+    }
+
+    private System.Collections.IEnumerator ZenModeCoroutine()
+    {
+        isZenModeActive = true;
+
+        Time.timeScale = slowMotionScale;
+
+        yield return new WaitForSecondsRealtime(zenModeDuration);
+
+        Time.timeScale = 1f;
+        isZenModeActive = false;
+    }
+
+    public void ActivateZenMode()
+    {
+        if (isGameOver || isPaused) return;
+        if (zenEnergy < maxZenEnergy) return;
+        if (isZenModeActive) return;
+
+        zenEnergy = 0;
+        UpdateEnergy();
+
+        StartCoroutine(ZenModeCoroutine());
     }
 
     void Start()
