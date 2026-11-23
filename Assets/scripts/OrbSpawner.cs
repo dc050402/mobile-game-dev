@@ -7,6 +7,7 @@ public class OrbSpawner : MonoBehaviour
 
     public float minSpawnTime = 2f;
     public float maxSpawnTime = 4f;
+    public float minDistanceFromObstacle = 4f;
 
     public float minSpawnHeight = -1.5f;
     public float maxSpawnHeight = 0f;
@@ -25,12 +26,16 @@ public class OrbSpawner : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= nextSpawnTime)
+    if (timer >= nextSpawnTime)
+    {
+        if (!IsObstacleNearby())
         {
             SpawnOrb();
-            timer = 0f;
-            SetNextSpawnTime();
         }
+
+        timer = 0f;
+        SetNextSpawnTime();
+    }
     }
 
     void SpawnOrb()
@@ -63,5 +68,15 @@ public class OrbSpawner : MonoBehaviour
     void SetNextSpawnTime()
     {
         nextSpawnTime = Random.Range(minSpawnTime, maxSpawnTime);
+    }
+
+    bool IsObstacleNearby()
+    {
+        Collider2D obstacle = Physics2D.OverlapCircle(
+            transform.position,
+            minDistanceFromObstacle
+        );
+
+        return obstacle != null && obstacle.CompareTag("Obstacle");
     }
 }

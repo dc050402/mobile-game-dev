@@ -2428,6 +2428,7 @@ MonoBehaviour:
   orbPrefab: {fileID: 3380196108671051701, guid: 19fcd43d8acb1d54c885a69e798aa034, type: 3}
   minSpawnTime: 2
   maxSpawnTime: 4
+  minDistanceFromObstacle: 6
   minSpawnHeight: -2
   maxSpawnHeight: 0
   scrollSpeed: 5
