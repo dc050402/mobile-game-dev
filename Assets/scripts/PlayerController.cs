@@ -28,6 +28,11 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
+
+        if (transform.position.y < -6f)
+        {
+            FindFirstObjectByType<GameManager>().GameOver();
+        }
     }
 
     void Jump()
