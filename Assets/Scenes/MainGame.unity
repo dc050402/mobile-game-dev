@@ -948,6 +948,7 @@ GameObject:
   - component: {fileID: 1474378940}
   - component: {fileID: 1474378939}
   - component: {fileID: 1474378938}
+  - component: {fileID: 1474378941}
   - component: {fileID: 1474378937}
   m_Layer: 0
   m_Name: Player
@@ -1103,6 +1104,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1474378941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474378936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab9e3968b836e946955f662f919b75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  jumpForce: 10
 --- !u!1 &1779332181
 GameObject:
   m_ObjectHideFlags: 0
