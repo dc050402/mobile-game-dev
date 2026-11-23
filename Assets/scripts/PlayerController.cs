@@ -43,5 +43,13 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = true;
         }
+
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            Debug.Log("GAME OVER!");
+            Time.timeScale = 0f;
+        }
     }
+
+
 }
