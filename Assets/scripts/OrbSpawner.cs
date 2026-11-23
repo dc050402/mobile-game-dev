@@ -30,11 +30,19 @@ public class OrbSpawner : MonoBehaviour
 
     void SpawnOrb()
     {
-        Instantiate(orbPrefab, transform.position, Quaternion.identity);
+        GameObject orb = Instantiate(
+            orbPrefab,
+            transform.position,
+            Quaternion.identity
+        );
+
+        orb.AddComponent<GroundSectionMovement>().speed = 5f;
     }
 
     void SetNextSpawnTime()
     {
         nextSpawnTime = Random.Range(minSpawnTime, maxSpawnTime);
     }
+
+
 }

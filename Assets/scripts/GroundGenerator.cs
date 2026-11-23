@@ -22,6 +22,8 @@ public class GroundGenerator : MonoBehaviour
 
     void Update()
     {
+        nextSpawnX -= scrollSpeed * Time.deltaTime;
+
         if (nextSpawnX < 40f)
         {
             SpawnGround(Random.Range(0, 3) == 0);
