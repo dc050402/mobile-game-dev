@@ -8,7 +8,7 @@ public class CollectibleOrb : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             FindFirstObjectByType<GameManager>().AddScore(10);
-
+            FindFirstObjectByType<GameManager>().AddZenEnergy(50);
             Destroy(gameObject);
         }
     }
