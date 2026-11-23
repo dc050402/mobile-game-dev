@@ -4,8 +4,11 @@ using UnityEngine;
 public class GroundGenerator : MonoBehaviour
 {
     public GameObject groundPrefab;
-    public float sectionWidth = 2.5f;
+    public float sectionWidth = 1.5f;
     public float scrollSpeed = 5f;
+
+    public float groundWidth = 3f;
+    public float gapWidth = 0.8f;
 
     private float nextSpawnX = 0f;
 
@@ -19,7 +22,7 @@ public class GroundGenerator : MonoBehaviour
 
     void Update()
     {
-        if (nextSpawnX - transform.position.x < 40f)
+        if (nextSpawnX < 40f)
         {
             SpawnGround(Random.Range(0, 3) == 0);
         }
@@ -27,18 +30,22 @@ public class GroundGenerator : MonoBehaviour
 
     void SpawnGround(bool makeGap)
     {
-        if (!makeGap)
+        if (makeGap)
+        {
+            nextSpawnX += gapWidth;
+        }
+        else
         {
             GameObject ground = Instantiate(
                 groundPrefab,
-                new Vector3(nextSpawnX + sectionWidth / 2f, -3f, 0f),
+                new Vector3(nextSpawnX + groundWidth / 2f, -3f, 0f),
                 Quaternion.identity
             );
 
-            ground.transform.localScale = new Vector3(sectionWidth, 1f, 1f);
+            ground.transform.localScale = new Vector3(groundWidth, 1f, 1f);
             ground.AddComponent<GroundSectionMovement>().speed = scrollSpeed;
-        }
 
-        nextSpawnX += sectionWidth;
+            nextSpawnX += groundWidth;
+        }
     }
 }
